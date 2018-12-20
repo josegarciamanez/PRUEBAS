@@ -1,0 +1,64 @@
+html
+    font-size: 16px
+body
+    margin: 0
+    padding: 0
+h1
+    font-size: 3rem
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+.bg-black
+    background-image: url('./img/bg1.jpeg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    background-blend-mode: luminosity
+    background-color: #ff748a
+    color: white
+    grid-area: bg-black
+.bg-yellow
+    background-image: url('./img/bg2.jpeg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    background-blend-mode: luminosity
+    background-color: yellow
+    color: black
+    grid-area: bg-yellow
+.bg-red
+    background-image: url('./img/bg3.jpeg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    background-blend-mode: luminosity
+    background-color: red
+    color: green
+    grid-area: bg-red
+
+.flex-container
+    display: flex
+    justify-content: center
+    align-items: center
+@supports (display: grid)
+    .grid-container
+        display: grid
+        width: 100vw
+        height: 100vh
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-areas: "bg-red bg-yellow bg-black"
+
+@media screen and (min-width: 1200px) and (max-width: 1300px)
+    .grid-container
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-areas: "bg-black bg-yellow bg-red"
+       
+
+@media screen and (min-width: 601px) and (max-width: 920px)
+    .grid-container
+        grid-template-columns: 1fr 1fr
+        grid-template-areas: "bg-black bg-yellow" "bg-red bg-red"
+
+@media screen and (min-width: 320px) and (max-width: 600px)
+    .grid-container
+        grid-template-columns: 1fr
+        grid-template-areas: "bg-black" "bg-red" "bg-yellow"
+        
